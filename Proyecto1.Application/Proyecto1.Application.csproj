@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -15,11 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Proyecto1.Domain\Proyecto1.Domain.csproj" />
     <ProjectReference Include="..\Proyecto1.Shared\Proyecto1.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Features\" />
   </ItemGroup>
 
 </Project>
