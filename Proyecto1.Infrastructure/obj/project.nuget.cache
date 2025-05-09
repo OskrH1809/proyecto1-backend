@@ -1,8 +1,48 @@
 {
   "version": 2,
-  "dgSpecHash": "FWJnu/BpnDE=",
+  "dgSpecHash": "dTIZVYiLUXo=",
   "success": true,
   "projectFilePath": "C:\\Users\\Oscar\\Documents\\Grupo Vision\\Proyecto1\\Proyecto1.Infrastructure\\Proyecto1.Infrastructure.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Oscar\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\mediatr\\12.5.0\\mediatr.12.5.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.20\\microsoft.entityframeworkcore.7.0.20.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.20\\microsoft.entityframeworkcore.abstractions.7.0.20.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.20\\microsoft.entityframeworkcore.analyzers.7.0.20.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.20\\microsoft.entityframeworkcore.design.7.0.20.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.20\\microsoft.entityframeworkcore.relational.7.0.20.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.dependencymodel\\7.0.0\\microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\npgsql\\7.0.7\\npgsql.7.0.7.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.18\\npgsql.entityframeworkcore.postgresql.7.0.18.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oscar\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Se detectó una versión del paquete fuera de la restricción de dependencia: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requiere MediatR (>= 11.0.0 && < 12.0.0), pero la versión MediatR 12.5.0 ya se resolvió.",
+      "libraryId": "MediatR",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
