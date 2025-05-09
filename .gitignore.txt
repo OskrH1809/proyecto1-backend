@@ -1,10 +1,29 @@
-# .gitignore para Visual Studio
-bin/
-obj/
+
 .vs/
 *.user
 *.suo
 *.cache
+bin/
+obj/
+
 *.log
 *.db
 .env
+
+
+.vscode/
+
+vs/
+
+
+TestResults/
+
+
+packages/
+
+# Ignore coverage output
+coverage/
+
+
+.idea/
+*.DotSettings.user

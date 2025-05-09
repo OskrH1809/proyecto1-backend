@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto1.Domain.Entities
 {
-    internal class Libro
+    public class Libro
     {
         public int Id { get; set; }
         public string Titulo { get; set; } = null!;
