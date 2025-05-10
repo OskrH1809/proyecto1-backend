@@ -3,9 +3,10 @@ using MediatR;
 using Proyecto1.Application.DTOs;
 using Proyecto1.Application.Features.Autores.Commands;
 using Proyecto1.Application.Features.Autores.Queries;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Proyecto1.API.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class AutoresController : ControllerBase

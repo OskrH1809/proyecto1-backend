@@ -4,9 +4,10 @@ using Proyecto1.Application.DTOs;
 using Proyecto1.Application.Features.Libros.Commands;
 using Proyecto1.Application.Features.Libros.Queries;
 using Proyecto1.Application.Features.Autores.Commands;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Proyecto1.API.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class LibrosController : ControllerBase
