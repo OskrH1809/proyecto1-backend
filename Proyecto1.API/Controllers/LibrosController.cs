@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Proyecto1.Domain.Entities;
-using Proyecto1.Domain.Interfaces;
+using MediatR;
+using Proyecto1.Application.DTOs;
+using Proyecto1.Application.Features.Libros.Commands;
+using Proyecto1.Application.Features.Libros.Queries;
+using Proyecto1.Application.Features.Autores.Commands;
 
 namespace Proyecto1.API.Controllers;
 
@@ -8,67 +11,52 @@ namespace Proyecto1.API.Controllers;
 [Route("api/[controller]")]
 public class LibrosController : ControllerBase
 {
-    private readonly IUnitOfWork _unitOfWork;
+    private readonly IMediator _mediator;
 
-    public LibrosController(IUnitOfWork unitOfWork)
+    public LibrosController(IMediator mediator)
     {
-        _unitOfWork = unitOfWork;
+        _mediator = mediator;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var libros = await _unitOfWork.Libros.GetAllAsync();
+        var libros = await _mediator.Send(new GetAllLibrosQuery());
         return Ok(libros);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var libro = await _unitOfWork.Libros.GetByIdAsync(id);
+        var libro = await _mediator.Send(new GetLibroByIdQuery(id));
         if (libro == null)
             return NotFound();
-
         return Ok(libro);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Libro libro)
+    public async Task<IActionResult> Create([FromBody] CreateLibroCommand command)
     {
-        await _unitOfWork.Libros.AddAsync(libro);
-        await _unitOfWork.SaveChangesAsync();
+        var libro = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetById), new { id = libro.Id }, libro);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(int id, Libro libro)
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateLibroCommand command)
     {
-        var existing = await _unitOfWork.Libros.GetByIdAsync(id);
-        if (existing == null)
-            return NotFound();
+        if (id != command.Id)
+            return BadRequest();
 
-        existing.Titulo = libro.Titulo;
-        existing.Anio = libro.Anio;
-        existing.Genero = libro.Genero;
-        existing.NumeroPaginas = libro.NumeroPaginas;
-        existing.AutorId = libro.AutorId;
-
-        _unitOfWork.Libros.Update(existing);
-        await _unitOfWork.SaveChangesAsync();
-
+        await _mediator.Send(command);
         return NoContent();
+
+       
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var libro = await _unitOfWork.Libros.GetByIdAsync(id);
-        if (libro == null)
-            return NotFound();
-
-        _unitOfWork.Libros.Remove(libro);
-        await _unitOfWork.SaveChangesAsync();
-
+        await _mediator.Send(new DeleteAutorCommand(id));
         return NoContent();
     }
 }
