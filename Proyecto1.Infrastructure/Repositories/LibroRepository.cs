@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using Proyecto1.Domain.Entities;
 using Proyecto1.Domain.Interfaces;
 using Proyecto1.Infrastructure.Data;
@@ -32,6 +33,14 @@ public class LibroRepository : ILibroRepository
     public void Update(Libro libro)
     {
         _context.Libros.Update(libro);
+    }
+    public async Task<int> CountAsync(Expression<Func<Libro, bool>> predicate)
+    {
+        return await _context.Libros.CountAsync(predicate);
+    }
+    public async Task<IEnumerable<Libro>> GetAllWithAutoresAsync()
+    {
+        return await _context.Libros.Include(l => l.Autor).ToListAsync();
     }
 
     public void Remove(Libro libro)

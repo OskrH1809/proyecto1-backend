@@ -60,4 +60,13 @@ public class LibrosController : ControllerBase
         await _mediator.Send(new DeleteAutorCommand(id));
         return NoContent();
     }
+
+    [HttpGet("search")]
+    public async Task<IActionResult> Search([FromQuery] string? titulo, [FromQuery] int? anio, [FromQuery] string? autorNombre)
+    {
+        var query = new SearchLibrosQuery(titulo, anio, autorNombre);
+        var result = await _mediator.Send(query);
+        return Ok(result);
+    }
+
 }
