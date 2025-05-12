@@ -93,6 +93,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             }
         };
     });
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
@@ -107,6 +116,7 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<Proyecto1.API.Middleware.ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 
 // activar autenticación y autorización
 app.UseAuthentication();
@@ -121,6 +131,8 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     dbContext.Database.Migrate();
 }
+
+
 
 app.Run();
 

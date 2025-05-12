@@ -57,7 +57,7 @@ public class LibrosController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        await _mediator.Send(new DeleteAutorCommand(id));
+        await _mediator.Send(new DeleteLibroCommand(id));
         return NoContent();
     }
 
