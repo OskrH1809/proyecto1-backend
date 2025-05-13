@@ -10,5 +10,8 @@ public class MappingProfile : Profile
     {
         CreateMap<Autor, AutorDto>().ReverseMap();
         CreateMap<Libro, LibroDto>().ReverseMap();
+        CreateMap<Libro, LibroAutorDto>()
+        .ForMember(dest => dest.NombreAutor, opt => opt.MapFrom(src => src.Autor.NombreCompleto));
+
     }
 }

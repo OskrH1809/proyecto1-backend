@@ -14,6 +14,23 @@ public class LibroRepository : ILibroRepository
     {
         _context = context;
     }
+    public async Task<IEnumerable<Libro>> BuscarPorTextoAsync(string? query)
+    {
+        var libros = _context.Libros
+            .Include(l => l.Autor)
+            .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(query))
+        {
+            query = query.ToLower();
+            libros = libros.Where(l =>
+                l.Titulo.ToLower().Contains(query) ||
+                l.Autor.NombreCompleto.ToLower().Contains(query) ||
+                l.Anio.ToString().Contains(query));
+        }
+
+        return await libros.ToListAsync();
+    }
 
     public async Task<IEnumerable<Libro>> GetAllAsync()
     {

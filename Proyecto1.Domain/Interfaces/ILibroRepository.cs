@@ -18,5 +18,8 @@ namespace Proyecto1.Domain.Interfaces
         Task<IEnumerable<Libro>> GetAllWithAutoresAsync();
 
         void Remove(Libro libro);
+        Task<IEnumerable<Libro>> BuscarPorTextoAsync(string? query);
+
+
     }
 }

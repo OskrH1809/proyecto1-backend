@@ -8,4 +8,5 @@ public class LibroDto
     public string? Genero { get; set; }
     public int NumeroPaginas { get; set; }
     public int AutorId { get; set; }
+
 }

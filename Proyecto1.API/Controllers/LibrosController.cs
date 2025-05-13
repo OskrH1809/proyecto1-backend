@@ -62,10 +62,9 @@ public class LibrosController : ControllerBase
     }
 
     [HttpGet("search")]
-    public async Task<IActionResult> Search([FromQuery] string? titulo, [FromQuery] int? anio, [FromQuery] string? autorNombre)
+    public async Task<IActionResult> BuscarPorTexto([FromQuery] string? query)
     {
-        var query = new SearchLibrosQuery(titulo, anio, autorNombre);
-        var result = await _mediator.Send(query);
+        var result = await _mediator.Send(new SearchLibrosQuery(query));
         return Ok(result);
     }
 
